@@ -356,3 +356,750 @@ Caused by: java.lang.ClassNotFoundException: zipkin2.storage.AutocompleteTags
 2019-08-03 16:49:31.741  INFO 24116 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2019-08-03 16:49:31.748  INFO 24116 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2019-08-03 16:49:31.749  INFO 24116 --- [Thread-43] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-08-03 16:54:33.888  INFO 24298 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8e4a0729] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 16:54:39.154  INFO 24298 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 16:54:39.158  INFO 24298 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 16:54:39.193  INFO 24298 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 16:54:39.690  WARN 24298 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 16:54:39.692  WARN 24298 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 16:54:39.892  WARN 24298 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 16:54:39.901  WARN 24298 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 16:54:40.095  INFO 24298 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e3f1fa4b-e7ff-3a62-b2dc-394c1d018c1d
+2019-08-03 16:54:40.208  INFO 24298 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7230042c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 16:54:40.370  INFO 24298 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8e4a0729] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 16:54:40.549  WARN 24298 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 16:54:40.549  INFO 24298 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 16:54:40.557  INFO 24298 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3e856100
+2019-08-03 16:54:40.603  INFO 24298 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 16:54:40.739  WARN 24298 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinServerConfiguration': Unsatisfied dependency expressed through field 'httpCollector'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinHttpCollector': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storage' defined in class path resource [zipkin2/autoconfigure/storage/mysql/ZipkinMySQLStorageAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [zipkin2.storage.mysql.v1.MySQLStorage] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+2019-08-03 16:54:40.739  INFO 24298 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 16:54:40.749  INFO 24298 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-03 16:54:40.766 ERROR 24298 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinServerConfiguration': Unsatisfied dependency expressed through field 'httpCollector'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinHttpCollector': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storage' defined in class path resource [zipkin2/autoconfigure/storage/mysql/ZipkinMySQLStorageAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [zipkin2.storage.mysql.v1.MySQLStorage] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at com.atinbo.sleuth.zipkin.AtinboZipkinApplication.main(AtinboZipkinApplication.java:12) [classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinServerConfiguration': Unsatisfied dependency expressed through field 'httpCollector'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinHttpCollector': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storage' defined in class path resource [zipkin2/autoconfigure/storage/mysql/ZipkinMySQLStorageAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [zipkin2.storage.mysql.v1.MySQLStorage] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1378) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:575) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:391) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:214) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:178) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'zipkin2.server.internal.ZipkinHttpCollector': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storage' defined in class path resource [zipkin2/autoconfigure/storage/mysql/ZipkinMySQLStorageAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [zipkin2.storage.mysql.v1.MySQLStorage] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:767) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1154) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1239) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 29 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'storage' defined in class path resource [zipkin2/autoconfigure/storage/mysql/ZipkinMySQLStorageAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [zipkin2.storage.mysql.v1.MySQLStorage] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:273) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1239) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:855) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:758) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 42 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [zipkin2.storage.mysql.v1.MySQLStorage] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:680) ~[spring-core-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:540) ~[spring-core-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:207) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:189) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:128) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:297) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1044) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:550) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 52 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: zipkin2/storage/AutocompleteTags
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_221]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_221]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_221]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:662) ~[spring-core-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 59 common frames omitted
+Caused by: java.lang.ClassNotFoundException: zipkin2.storage.AutocompleteTags
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[na:1.8.0_221]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_221]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) ~[na:1.8.0_221]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_221]
+	... 63 common frames omitted
+
+2019-08-03 17:13:24.445  INFO 24545 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6733ddd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:13:29.906  INFO 24545 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:13:29.910  INFO 24545 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:13:29.963  INFO 24545 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:13:30.599  WARN 24545 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:13:30.602  WARN 24545 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:13:30.873  WARN 24545 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:13:30.883  WARN 24545 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:13:31.136  INFO 24545 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a4948a6c-ef40-32cc-ade8-947ccf9e6408
+2019-08-03 17:13:31.330  INFO 24545 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4b19dada] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:13:31.521  INFO 24545 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6733ddd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:13:31.903  INFO 24545 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-08-03 17:13:31.931  INFO 24545 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-08-03 17:13:31.994  WARN 24545 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:13:31.995  WARN 24545 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:13:32.038  INFO 24545 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:13:32.039  INFO 24545 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2050 ms
+2019-08-03 17:13:32.207  INFO 24545 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:13:32.624  WARN 24545 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:13:32.624  INFO 24545 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:13:32.638  INFO 24545 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4b07cad0
+2019-08-03 17:13:32.891  INFO 24545 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:13:32.892  INFO 24545 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:13:32.893  INFO 24545 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:13:33.034  INFO 24545 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:13:33.036  INFO 24545 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:13:33.036  INFO 24545 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:13:33.036  INFO 24545 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:13:33.036  INFO 24545 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:13:33.036  INFO 24545 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:13:33.037  INFO 24545 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:13:33.193  WARN 24545 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:13:33.193  INFO 24545 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:13:33.583  INFO 24545 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:13:33.884  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseExceptions: false (default)
+2019-08-03 17:13:33.885  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseSocketExceptions: false (default)
+2019-08-03 17:13:33.886  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseResponses: false (default)
+2019-08-03 17:13:33.891  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.useEpoll: false (default)
+2019-08-03 17:13:34.288  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.useOpenSsl: true (default)
+2019-08-03 17:13:34.289  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.maxNumConnections: 2147483647 (default)
+2019-08-03 17:13:34.289  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.numCommonWorkers: 8 (default)
+2019-08-03 17:13:34.290  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.numCommonBlockingTaskThreads: 200 (default)
+2019-08-03 17:13:34.291  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxRequestLength: 10485760 (default)
+2019-08-03 17:13:34.291  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxResponseLength: 10485760 (default)
+2019-08-03 17:13:34.292  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultRequestTimeoutMillis: 10000 (default)
+2019-08-03 17:13:34.292  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultResponseTimeoutMillis: 15000 (default)
+2019-08-03 17:13:34.292  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultConnectTimeoutMillis: 3200 (default)
+2019-08-03 17:13:34.293  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultServerIdleTimeoutMillis: 15000 (default)
+2019-08-03 17:13:34.293  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultClientIdleTimeoutMillis: 10000 (default)
+2019-08-03 17:13:34.294  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2InitialConnectionWindowSize: 1048576 (default)
+2019-08-03 17:13:34.294  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2InitialStreamWindowSize: 1048576 (default)
+2019-08-03 17:13:34.294  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxFrameSize: 16384 (default)
+2019-08-03 17:13:34.294  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxStreamsPerConnection: 2147483647 (default)
+2019-08-03 17:13:34.295  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxHeaderListSize: 8192 (default)
+2019-08-03 17:13:34.295  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxInitialLineLength: 4096 (default)
+2019-08-03 17:13:34.295  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxHeaderSize: 8192 (default)
+2019-08-03 17:13:34.296  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxChunkSize: 8192 (default)
+2019-08-03 17:13:34.296  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultUseHttp2Preface: true (default)
+2019-08-03 17:13:34.296  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultUseHttp1Pipelining: false (default)
+2019-08-03 17:13:34.296  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultBackoffSpec: exponential=200:10000,jitter=0.2 (default)
+2019-08-03 17:13:34.297  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxTotalAttempts: 10 (default)
+2019-08-03 17:13:34.297  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.routeCache: maximumSize=4096 (default)
+2019-08-03 17:13:34.297  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.compositeServiceCache: maximumSize=256 (default)
+2019-08-03 17:13:34.297  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.parsedPathCache: maximumSize=4096 (default)
+2019-08-03 17:13:34.297  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.headerValueCache: maximumSize=4096 (default)
+2019-08-03 17:13:34.298  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.cachedHeaders: :authority,:scheme,:method,accept-encoding,content-type (default)
+2019-08-03 17:13:34.301  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.annotatedServiceExceptionVerbosity: unhandled (default)
+2019-08-03 17:13:34.302  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : /dev/epoll not available: java.lang.IllegalStateException: Only supported on Linux
+2019-08-03 17:13:34.302  INFO 24545 --- [main] com.linecorp.armeria.common.Flags        : Using OpenSSL: BoringSSL, 0x1010007f
+2019-08-03 17:13:34.514  INFO 24545 --- [main] c.l.armeria.common.util.SystemInfo       : Hostname: local (from 'hostname' command)
+2019-08-03 17:13:34.766  WARN 24545 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'armeriaServer' defined in class path resource [com/linecorp/armeria/spring/ArmeriaAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+2019-08-03 17:13:34.787  INFO 24545 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:13:34.796  INFO 24545 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-03 17:13:34.815 ERROR 24545 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'armeriaServer' defined in class path resource [com/linecorp/armeria/spring/ArmeriaAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:605) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at com.atinbo.sleuth.zipkin.AtinboZipkinApplication.main(AtinboZipkinApplication.java:11) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 19 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at zipkin2.autoconfigure.ui.ZipkinUiAutoConfiguration.lambda$uiServerConfigurator$0(ZipkinUiAutoConfiguration.java:179) ~[zipkin-autoconfigure-ui-2.12.9.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.lambda$armeriaServer$0(ArmeriaAutoConfiguration.java:111) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at java.util.ArrayList.forEach(ArrayList.java:1257) ~[na:1.8.0_221]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.lambda$armeriaServer$1(ArmeriaAutoConfiguration.java:110) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_221]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.armeriaServer(ArmeriaAutoConfiguration.java:109) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$f8a10716.CGLIB$armeriaServer$0(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$f8a10716$$FastClassBySpringCGLIB$$94712390.invoke(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$f8a10716.armeriaServer(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 20 common frames omitted
+
+2019-08-03 17:14:56.762  INFO 24570 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5de00b3a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:15:02.120  INFO 24570 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:15:02.124  INFO 24570 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:15:02.171  INFO 24570 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:15:02.768  WARN 24570 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:15:02.770  WARN 24570 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:15:02.978  WARN 24570 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:15:02.989  WARN 24570 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:15:03.197  INFO 24570 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a4948a6c-ef40-32cc-ade8-947ccf9e6408
+2019-08-03 17:15:03.354  INFO 24570 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$41c6083d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:15:03.468  INFO 24570 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5de00b3a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:15:03.715  INFO 24570 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-08-03 17:15:03.728  INFO 24570 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-08-03 17:15:03.770  WARN 24570 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:15:03.771  WARN 24570 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:15:03.792  INFO 24570 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:15:03.793  INFO 24570 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1592 ms
+2019-08-03 17:15:03.906  INFO 24570 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:15:04.226  WARN 24570 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:15:04.226  INFO 24570 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:15:04.234  INFO 24570 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3f357c9d
+2019-08-03 17:15:04.450  INFO 24570 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:15:04.451  INFO 24570 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:15:04.451  INFO 24570 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:15:04.557  INFO 24570 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:15:04.558  INFO 24570 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:15:04.559  INFO 24570 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:15:04.559  INFO 24570 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:15:04.559  INFO 24570 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:15:04.559  INFO 24570 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:15:04.559  INFO 24570 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:15:04.625  WARN 24570 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:15:04.626  INFO 24570 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:15:04.930  INFO 24570 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:15:05.138  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseExceptions: false (default)
+2019-08-03 17:15:05.138  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseSocketExceptions: false (default)
+2019-08-03 17:15:05.138  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseResponses: false (default)
+2019-08-03 17:15:05.142  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.useEpoll: false (default)
+2019-08-03 17:15:05.370  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.useOpenSsl: true (default)
+2019-08-03 17:15:05.371  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.maxNumConnections: 2147483647 (default)
+2019-08-03 17:15:05.371  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.numCommonWorkers: 8 (default)
+2019-08-03 17:15:05.372  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.numCommonBlockingTaskThreads: 200 (default)
+2019-08-03 17:15:05.373  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxRequestLength: 10485760 (default)
+2019-08-03 17:15:05.373  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxResponseLength: 10485760 (default)
+2019-08-03 17:15:05.373  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultRequestTimeoutMillis: 10000 (default)
+2019-08-03 17:15:05.373  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultResponseTimeoutMillis: 15000 (default)
+2019-08-03 17:15:05.374  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultConnectTimeoutMillis: 3200 (default)
+2019-08-03 17:15:05.374  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultServerIdleTimeoutMillis: 15000 (default)
+2019-08-03 17:15:05.374  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultClientIdleTimeoutMillis: 10000 (default)
+2019-08-03 17:15:05.374  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2InitialConnectionWindowSize: 1048576 (default)
+2019-08-03 17:15:05.375  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2InitialStreamWindowSize: 1048576 (default)
+2019-08-03 17:15:05.375  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxFrameSize: 16384 (default)
+2019-08-03 17:15:05.375  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxStreamsPerConnection: 2147483647 (default)
+2019-08-03 17:15:05.375  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxHeaderListSize: 8192 (default)
+2019-08-03 17:15:05.375  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxInitialLineLength: 4096 (default)
+2019-08-03 17:15:05.376  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxHeaderSize: 8192 (default)
+2019-08-03 17:15:05.376  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxChunkSize: 8192 (default)
+2019-08-03 17:15:05.376  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultUseHttp2Preface: true (default)
+2019-08-03 17:15:05.376  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultUseHttp1Pipelining: false (default)
+2019-08-03 17:15:05.376  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultBackoffSpec: exponential=200:10000,jitter=0.2 (default)
+2019-08-03 17:15:05.377  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxTotalAttempts: 10 (default)
+2019-08-03 17:15:05.377  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.routeCache: maximumSize=4096 (default)
+2019-08-03 17:15:05.377  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.compositeServiceCache: maximumSize=256 (default)
+2019-08-03 17:15:05.377  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.parsedPathCache: maximumSize=4096 (default)
+2019-08-03 17:15:05.377  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.headerValueCache: maximumSize=4096 (default)
+2019-08-03 17:15:05.378  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.cachedHeaders: :authority,:scheme,:method,accept-encoding,content-type (default)
+2019-08-03 17:15:05.380  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.annotatedServiceExceptionVerbosity: unhandled (default)
+2019-08-03 17:15:05.381  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : /dev/epoll not available: java.lang.IllegalStateException: Only supported on Linux
+2019-08-03 17:15:05.381  INFO 24570 --- [main] com.linecorp.armeria.common.Flags        : Using OpenSSL: BoringSSL, 0x1010007f
+2019-08-03 17:15:05.489  INFO 24570 --- [main] c.l.armeria.common.util.SystemInfo       : Hostname: local (from 'hostname' command)
+2019-08-03 17:15:05.712  WARN 24570 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'armeriaServer' defined in class path resource [com/linecorp/armeria/spring/ArmeriaAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+2019-08-03 17:15:05.723  INFO 24570 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:15:05.732  INFO 24570 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-03 17:15:05.744 ERROR 24570 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'armeriaServer' defined in class path resource [com/linecorp/armeria/spring/ArmeriaAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:605) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at com.atinbo.sleuth.zipkin.AtinboZipkinApplication.main(AtinboZipkinApplication.java:11) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 19 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at zipkin2.autoconfigure.ui.ZipkinUiAutoConfiguration.lambda$uiServerConfigurator$0(ZipkinUiAutoConfiguration.java:179) ~[zipkin-autoconfigure-ui-2.12.9.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.lambda$armeriaServer$0(ArmeriaAutoConfiguration.java:111) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at java.util.ArrayList.forEach(ArrayList.java:1257) ~[na:1.8.0_221]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.lambda$armeriaServer$1(ArmeriaAutoConfiguration.java:110) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_221]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.armeriaServer(ArmeriaAutoConfiguration.java:109) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$ef4d3479.CGLIB$armeriaServer$0(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$ef4d3479$$FastClassBySpringCGLIB$$63f489b6.invoke(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$ef4d3479.armeriaServer(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 20 common frames omitted
+
+2019-08-03 17:17:25.613  INFO 24606 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$69f80e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:17:30.883  INFO 24606 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:17:30.887  INFO 24606 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:17:30.919  INFO 24606 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:17:31.508  WARN 24606 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:17:31.511  WARN 24606 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:17:31.772  WARN 24606 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:17:31.786  WARN 24606 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:17:32.003  INFO 24606 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a4948a6c-ef40-32cc-ade8-947ccf9e6408
+2019-08-03 17:17:32.155  INFO 24606 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ea857dec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:17:32.279  INFO 24606 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$69f80e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:17:32.563  INFO 24606 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-08-03 17:17:32.576  INFO 24606 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-08-03 17:17:32.615  WARN 24606 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:17:32.616  WARN 24606 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:17:32.640  INFO 24606 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:17:32.641  INFO 24606 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1685 ms
+2019-08-03 17:17:32.766  INFO 24606 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:17:33.123  WARN 24606 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:17:33.123  INFO 24606 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:17:33.135  INFO 24606 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4cb24e2
+2019-08-03 17:17:33.394  INFO 24606 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:17:33.395  INFO 24606 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:17:33.395  INFO 24606 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:17:33.496  INFO 24606 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:17:33.497  INFO 24606 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:17:33.497  INFO 24606 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:17:33.497  INFO 24606 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:17:33.497  INFO 24606 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:17:33.497  INFO 24606 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:17:33.497  INFO 24606 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:17:33.575  WARN 24606 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:17:33.576  INFO 24606 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:17:33.900  INFO 24606 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:17:34.147  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseExceptions: false (default)
+2019-08-03 17:17:34.147  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseSocketExceptions: false (default)
+2019-08-03 17:17:34.147  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.verboseResponses: false (default)
+2019-08-03 17:17:34.150  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.useEpoll: false (default)
+2019-08-03 17:17:34.563  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.useOpenSsl: true (default)
+2019-08-03 17:17:34.564  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.maxNumConnections: 2147483647 (default)
+2019-08-03 17:17:34.564  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.numCommonWorkers: 8 (default)
+2019-08-03 17:17:34.565  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.numCommonBlockingTaskThreads: 200 (default)
+2019-08-03 17:17:34.566  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxRequestLength: 10485760 (default)
+2019-08-03 17:17:34.566  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxResponseLength: 10485760 (default)
+2019-08-03 17:17:34.566  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultRequestTimeoutMillis: 10000 (default)
+2019-08-03 17:17:34.567  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultResponseTimeoutMillis: 15000 (default)
+2019-08-03 17:17:34.567  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultConnectTimeoutMillis: 3200 (default)
+2019-08-03 17:17:34.567  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultServerIdleTimeoutMillis: 15000 (default)
+2019-08-03 17:17:34.568  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultClientIdleTimeoutMillis: 10000 (default)
+2019-08-03 17:17:34.568  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2InitialConnectionWindowSize: 1048576 (default)
+2019-08-03 17:17:34.568  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2InitialStreamWindowSize: 1048576 (default)
+2019-08-03 17:17:34.568  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxFrameSize: 16384 (default)
+2019-08-03 17:17:34.569  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxStreamsPerConnection: 2147483647 (default)
+2019-08-03 17:17:34.569  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp2MaxHeaderListSize: 8192 (default)
+2019-08-03 17:17:34.569  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxInitialLineLength: 4096 (default)
+2019-08-03 17:17:34.570  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxHeaderSize: 8192 (default)
+2019-08-03 17:17:34.570  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultHttp1MaxChunkSize: 8192 (default)
+2019-08-03 17:17:34.570  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultUseHttp2Preface: true (default)
+2019-08-03 17:17:34.570  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultUseHttp1Pipelining: false (default)
+2019-08-03 17:17:34.570  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultBackoffSpec: exponential=200:10000,jitter=0.2 (default)
+2019-08-03 17:17:34.571  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.defaultMaxTotalAttempts: 10 (default)
+2019-08-03 17:17:34.571  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.routeCache: maximumSize=4096 (default)
+2019-08-03 17:17:34.571  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.compositeServiceCache: maximumSize=256 (default)
+2019-08-03 17:17:34.571  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.parsedPathCache: maximumSize=4096 (default)
+2019-08-03 17:17:34.571  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.headerValueCache: maximumSize=4096 (default)
+2019-08-03 17:17:34.572  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.cachedHeaders: :authority,:scheme,:method,accept-encoding,content-type (default)
+2019-08-03 17:17:34.574  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : com.linecorp.armeria.annotatedServiceExceptionVerbosity: unhandled (default)
+2019-08-03 17:17:34.576  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : /dev/epoll not available: java.lang.IllegalStateException: Only supported on Linux
+2019-08-03 17:17:34.576  INFO 24606 --- [main] com.linecorp.armeria.common.Flags        : Using OpenSSL: BoringSSL, 0x1010007f
+2019-08-03 17:17:34.713  INFO 24606 --- [main] c.l.armeria.common.util.SystemInfo       : Hostname: local (from 'hostname' command)
+2019-08-03 17:17:34.973  WARN 24606 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'armeriaServer' defined in class path resource [com/linecorp/armeria/spring/ArmeriaAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+2019-08-03 17:17:34.984  INFO 24606 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:17:34.993  INFO 24606 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-03 17:17:35.005 ERROR 24606 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'armeriaServer' defined in class path resource [com/linecorp/armeria/spring/ArmeriaAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:605) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.RELEASE.jar:2.1.0.RELEASE]
+	at com.atinbo.sleuth.zipkin.AtinboZipkinApplication.main(AtinboZipkinApplication.java:11) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.linecorp.armeria.server.Server]: Factory method 'armeriaServer' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 19 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at zipkin2.autoconfigure.ui.ZipkinUiAutoConfiguration.lambda$uiServerConfigurator$0(ZipkinUiAutoConfiguration.java:179) ~[zipkin-autoconfigure-ui-2.12.9.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.lambda$armeriaServer$0(ArmeriaAutoConfiguration.java:111) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at java.util.ArrayList.forEach(ArrayList.java:1257) ~[na:1.8.0_221]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.lambda$armeriaServer$1(ArmeriaAutoConfiguration.java:110) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at java.util.Optional.ifPresent(Optional.java:159) ~[na:1.8.0_221]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration.armeriaServer(ArmeriaAutoConfiguration.java:109) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$980caa28.CGLIB$armeriaServer$0(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$980caa28$$FastClassBySpringCGLIB$$116451a.invoke(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at com.linecorp.armeria.spring.ArmeriaAutoConfiguration$$EnhancerBySpringCGLIB$$980caa28.armeriaServer(<generated>) ~[armeria-spring-boot-autoconfigure-0.83.0.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 20 common frames omitted
+
+2019-08-03 17:20:12.990  INFO 24709 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ed28b071] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:20:18.296  INFO 24709 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:20:18.300  INFO 24709 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:20:18.344  INFO 24709 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:20:18.827  WARN 24709 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:20:18.829  WARN 24709 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:20:19.044  WARN 24709 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:20:19.052  WARN 24709 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:20:19.061  WARN 24709 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'characterEncodingFilter' defined in class path resource [zipkin2/autoconfigure/ui/ZipkinUiAutoConfiguration.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=zipkin2.autoconfigure.ui.ZipkinUiAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [zipkin2/autoconfigure/ui/ZipkinUiAutoConfiguration.class]] for bean 'characterEncodingFilter': There is already [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]] bound.
+2019-08-03 17:20:19.070  INFO 24709 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-03 17:20:19.074 ERROR 24709 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'characterEncodingFilter', defined in class path resource [zipkin2/autoconfigure/ui/ZipkinUiAutoConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2019-08-03 17:21:40.204  INFO 24725 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6cd5ddca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:21:45.490  INFO 24725 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:21:45.494  INFO 24725 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:21:45.538  INFO 24725 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:21:46.073  WARN 24725 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:21:46.075  WARN 24725 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:21:46.328  WARN 24725 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:21:46.340  WARN 24725 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:21:46.356  WARN 24725 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'characterEncodingFilter' defined in class path resource [zipkin2/autoconfigure/ui/ZipkinUiAutoConfiguration.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=zipkin2.autoconfigure.ui.ZipkinUiAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [zipkin2/autoconfigure/ui/ZipkinUiAutoConfiguration.class]] for bean 'characterEncodingFilter': There is already [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]] bound.
+2019-08-03 17:21:46.369  INFO 24725 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-03 17:21:46.372 ERROR 24725 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'characterEncodingFilter', defined in class path resource [zipkin2/autoconfigure/ui/ZipkinUiAutoConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2019-08-03 17:22:58.090  INFO 24782 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b7eda9fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:23:03.444  INFO 24782 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:23:03.447  INFO 24782 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:23:03.496  INFO 24782 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:23:03.945  WARN 24782 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:23:03.946  WARN 24782 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:23:04.147  WARN 24782 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:23:04.157  WARN 24782 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:23:04.341  INFO 24782 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e3f1fa4b-e7ff-3a62-b2dc-394c1d018c1d
+2019-08-03 17:23:04.445  INFO 24782 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9bd3a6ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:23:04.553  INFO 24782 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b7eda9fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:23:04.763  WARN 24782 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:23:04.763  INFO 24782 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:23:04.775  INFO 24782 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3757e8e2
+2019-08-03 17:23:04.824  INFO 24782 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:23:05.139  INFO 24782 --- [main] org.xnio                                 : XNIO version 3.7.0.Final
+2019-08-03 17:23:05.152  INFO 24782 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.7.0.Final
+2019-08-03 17:23:05.186  INFO 24782 --- [main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+2019-08-03 17:23:05.203  WARN 24782 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:23:05.203  WARN 24782 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:23:05.224  INFO 24782 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:23:05.225  INFO 24782 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1712 ms
+2019-08-03 17:23:05.546  INFO 24782 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:23:05.547  INFO 24782 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:23:05.547  INFO 24782 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:23:05.649  INFO 24782 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:23:05.650  INFO 24782 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:23:05.650  INFO 24782 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:23:05.650  INFO 24782 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:23:05.651  INFO 24782 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:23:05.651  INFO 24782 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:23:05.651  INFO 24782 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:23:05.714  WARN 24782 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:23:05.714  INFO 24782 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:23:06.064  INFO 24782 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:23:06.369  INFO 24782 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-03 17:23:06.547  INFO 24782 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-03 17:23:06.890  INFO 24782 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-03 17:23:07.083  INFO 24782 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 9686 (http) with context path ''
+2019-08-03 17:23:07.087  INFO 24782 --- [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: {"cluster":"DEFAULT","ip":"192.168.6.80","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":9686,"scheduled":false,"serviceName":"DEFAULT_GROUP@@atinbo-sleuth-zipkin","stopped":false,"weight":1.0} to beat map.
+2019-08-03 17:23:07.162  INFO 24782 --- [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":9686,"weight":1.0}
+2019-08-03 17:23:07.202  INFO 24782 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, atinbo-sleuth-zipkin 192.168.6.80:9686 register finished
+2019-08-03 17:23:07.207  INFO 24782 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : Started AtinboZipkinApplication in 14.893 seconds (JVM running for 21.058)
+2019-08-03 17:23:07.211  INFO 24782 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin.yml+DEFAULT_GROUP
+2019-08-03 17:23:07.212  INFO 24782 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:23:07.213  INFO 24782 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin-local.yml+DEFAULT_GROUP
+2019-08-03 17:23:07.213  INFO 24782 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin-local.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:23:07.693  INFO 24782 --- [RMI TCP Connection(3)-127.0.0.1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-03 17:23:07.694  INFO 24782 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-03 17:23:07.706  INFO 24782 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-08-03 17:23:11.442  INFO 24782 --- [Thread-42] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2019-08-03 17:23:11.442  INFO 24782 --- [Thread-42] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@atinbo-sleuth-zipkin:192.168.6.80:9686 from beat map.
+2019-08-03 17:23:11.443  INFO 24782 --- [Thread-42] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{},"port":9686,"weight":1.0}
+2019-08-03 17:23:11.452  INFO 24782 --- [Thread-42] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2019-08-03 17:23:11.462  INFO 24782 --- [Thread-42] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:23:11.464  INFO 24782 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-03 17:23:11.471  INFO 24782 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-03 17:23:11.472  INFO 24782 --- [Thread-42] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-08-03 17:25:13.564  INFO 24843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$333a7bfc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:25:18.886  INFO 24843 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:25:18.893  INFO 24843 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:25:18.950  INFO 24843 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:25:19.464  WARN 24843 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:25:19.466  WARN 24843 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:25:19.828  WARN 24843 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:25:19.843  WARN 24843 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:25:20.066  INFO 24843 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e3f1fa4b-e7ff-3a62-b2dc-394c1d018c1d
+2019-08-03 17:25:20.202  INFO 24843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$172078ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:25:20.414  INFO 24843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$333a7bfc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:25:20.581  WARN 24843 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:25:20.582  INFO 24843 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:25:20.592  INFO 24843 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6de7778f
+2019-08-03 17:25:20.646  INFO 24843 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:25:21.043  INFO 24843 --- [main] org.xnio                                 : XNIO version 3.7.0.Final
+2019-08-03 17:25:21.056  INFO 24843 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.7.0.Final
+2019-08-03 17:25:21.097  INFO 24843 --- [main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+2019-08-03 17:25:21.116  WARN 24843 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:25:21.116  WARN 24843 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:25:21.141  INFO 24843 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:25:21.142  INFO 24843 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2168 ms
+2019-08-03 17:25:21.494  INFO 24843 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:25:21.494  INFO 24843 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:25:21.495  INFO 24843 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:25:21.603  INFO 24843 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:25:21.604  INFO 24843 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:25:21.605  INFO 24843 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:25:21.605  INFO 24843 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:25:21.605  INFO 24843 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:25:21.605  INFO 24843 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:25:21.605  INFO 24843 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:25:21.672  WARN 24843 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:25:21.672  INFO 24843 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:25:22.099  INFO 24843 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:25:22.420  INFO 24843 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-03 17:25:22.685  INFO 24843 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-03 17:25:23.065  INFO 24843 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-03 17:25:23.259  INFO 24843 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 9686 (http) with context path ''
+2019-08-03 17:25:23.264  INFO 24843 --- [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: {"cluster":"DEFAULT","ip":"192.168.6.80","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":9686,"scheduled":false,"serviceName":"DEFAULT_GROUP@@atinbo-sleuth-zipkin","stopped":false,"weight":1.0} to beat map.
+2019-08-03 17:25:23.339  INFO 24843 --- [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":9686,"weight":1.0}
+2019-08-03 17:25:23.391  INFO 24843 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, atinbo-sleuth-zipkin 192.168.6.80:9686 register finished
+2019-08-03 17:25:23.396  INFO 24843 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : Started AtinboZipkinApplication in 15.746 seconds (JVM running for 21.568)
+2019-08-03 17:25:23.400  INFO 24843 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin.yml+DEFAULT_GROUP
+2019-08-03 17:25:23.401  INFO 24843 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:25:23.401  INFO 24843 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin-local.yml+DEFAULT_GROUP
+2019-08-03 17:25:23.401  INFO 24843 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin-local.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:25:23.616  INFO 24843 --- [RMI TCP Connection(5)-127.0.0.1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-03 17:25:23.618  INFO 24843 --- [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-03 17:25:23.636  INFO 24843 --- [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2019-08-03 17:27:02.980  INFO 24843 --- [Thread-44] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2019-08-03 17:27:02.980  INFO 24843 --- [Thread-44] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@atinbo-sleuth-zipkin:192.168.6.80:9686 from beat map.
+2019-08-03 17:27:02.981  INFO 24843 --- [Thread-44] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{},"port":9686,"weight":1.0}
+2019-08-03 17:27:03.017  INFO 24843 --- [Thread-44] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2019-08-03 17:27:03.028  INFO 24843 --- [Thread-44] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:27:03.030  INFO 24843 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-03 17:27:03.038  INFO 24843 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-03 17:27:03.039  INFO 24843 --- [Thread-44] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-08-03 17:27:18.652  INFO 24894 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bddea8f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:27:23.930  INFO 24894 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:27:23.934  INFO 24894 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:27:23.973  INFO 24894 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:27:24.501  WARN 24894 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:27:24.503  WARN 24894 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:27:24.704  WARN 24894 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:27:24.716  WARN 24894 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:27:24.906  INFO 24894 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e3f1fa4b-e7ff-3a62-b2dc-394c1d018c1d
+2019-08-03 17:27:25.020  INFO 24894 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a1c4a5f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:27:25.147  INFO 24894 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bddea8f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:27:25.348  WARN 24894 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:27:25.348  INFO 24894 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:27:25.357  INFO 24894 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@53d6e959
+2019-08-03 17:27:25.413  INFO 24894 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:27:25.730  INFO 24894 --- [main] org.xnio                                 : XNIO version 3.7.0.Final
+2019-08-03 17:27:25.742  INFO 24894 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.7.0.Final
+2019-08-03 17:27:25.792  INFO 24894 --- [main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+2019-08-03 17:27:25.816  WARN 24894 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:27:25.816  WARN 24894 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:27:25.842  INFO 24894 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:27:25.842  INFO 24894 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1839 ms
+2019-08-03 17:27:26.170  INFO 24894 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:27:26.171  INFO 24894 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:27:26.172  INFO 24894 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:27:26.272  INFO 24894 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:27:26.273  INFO 24894 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:27:26.273  INFO 24894 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:27:26.274  INFO 24894 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:27:26.274  INFO 24894 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:27:26.274  INFO 24894 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:27:26.274  INFO 24894 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:27:26.334  WARN 24894 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:27:26.334  INFO 24894 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:27:26.676  INFO 24894 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:27:26.976  INFO 24894 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-03 17:27:27.132  INFO 24894 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-03 17:27:27.471  INFO 24894 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-03 17:27:27.643  INFO 24894 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 9686 (http) with context path ''
+2019-08-03 17:27:27.647  INFO 24894 --- [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: {"cluster":"DEFAULT","ip":"192.168.6.80","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":9686,"scheduled":false,"serviceName":"DEFAULT_GROUP@@atinbo-sleuth-zipkin","stopped":false,"weight":1.0} to beat map.
+2019-08-03 17:27:27.717  INFO 24894 --- [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":9686,"weight":1.0}
+2019-08-03 17:27:27.731  INFO 24894 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, atinbo-sleuth-zipkin 192.168.6.80:9686 register finished
+2019-08-03 17:27:27.736  INFO 24894 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : Started AtinboZipkinApplication in 14.745 seconds (JVM running for 20.63)
+2019-08-03 17:27:27.740  INFO 24894 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin.yml+DEFAULT_GROUP
+2019-08-03 17:27:27.741  INFO 24894 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:27:27.741  INFO 24894 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin-local.yml+DEFAULT_GROUP
+2019-08-03 17:27:27.741  INFO 24894 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin-local.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:27:27.848  INFO 24894 --- [RMI TCP Connection(5)-127.0.0.1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-03 17:27:27.849  INFO 24894 --- [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-03 17:27:27.861  INFO 24894 --- [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-08-03 17:28:03.363  INFO 24894 --- [Thread-42] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2019-08-03 17:28:03.364  INFO 24894 --- [Thread-42] com.alibaba.nacos.client.naming          : [BEAT] removing beat: DEFAULT_GROUP@@atinbo-sleuth-zipkin:192.168.6.80:9686 from beat map.
+2019-08-03 17:28:03.365  INFO 24894 --- [Thread-42] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{},"port":9686,"weight":1.0}
+2019-08-03 17:28:03.372  INFO 24894 --- [Thread-42] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2019-08-03 17:28:03.383  INFO 24894 --- [Thread-42] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:28:03.385  INFO 24894 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-03 17:28:03.396  INFO 24894 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-03 17:28:03.398  INFO 24894 --- [Thread-42] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-08-03 17:31:52.387  INFO 24972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b76fa906] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:31:57.657  INFO 24972 --- [main] c.a.c.n.c.NacosPropertySourceBuilder     : Loading nacos data, dataId: 'atinbo-sleuth-zipkin-local.yml', group: 'DEFAULT_GROUP'
+2019-08-03 17:31:57.661  INFO 24972 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource {name='NACOS', propertySources=[NacosPropertySource {name='atinbo-sleuth-zipkin-local.yml'}, NacosPropertySource {name='atinbo-sleuth-zipkin.yml'}]}
+2019-08-03 17:31:57.693  INFO 24972 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : The following profiles are active: local
+2019-08-03 17:31:58.249  WARN 24972 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-config' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:31:58.251  WARN 24972 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'nacos-discovery' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:31:58.443  WARN 24972 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:31:58.451  WARN 24972 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-03 17:31:58.633  INFO 24972 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e3f1fa4b-e7ff-3a62-b2dc-394c1d018c1d
+2019-08-03 17:31:58.741  INFO 24972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9b55a609] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:31:58.889  INFO 24972 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b76fa906] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-03 17:31:59.065  WARN 24972 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:31:59.065  INFO 24972 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:31:59.072  INFO 24972 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3887c7d7
+2019-08-03 17:31:59.118  INFO 24972 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-03 17:31:59.429  INFO 24972 --- [main] org.xnio                                 : XNIO version 3.7.0.Final
+2019-08-03 17:31:59.441  INFO 24972 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.7.0.Final
+2019-08-03 17:31:59.474  INFO 24972 --- [main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+2019-08-03 17:31:59.491  WARN 24972 --- [main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2019-08-03 17:31:59.491  WARN 24972 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-08-03 17:31:59.521  INFO 24972 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-08-03 17:31:59.522  INFO 24972 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1807 ms
+2019-08-03 17:31:59.851  INFO 24972 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:31:59.851  INFO 24972 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2019-08-03 17:31:59.852  INFO 24972 --- [main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2019-08-03 17:31:59.954  INFO 24972 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-03 17:31:59.955  INFO 24972 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-08-03 17:31:59.955  INFO 24972 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-03 17:31:59.955  INFO 24972 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-08-03 17:31:59.955  INFO 24972 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-03 17:31:59.955  INFO 24972 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2019-08-03 17:31:59.956  INFO 24972 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-08-03 17:32:00.017  WARN 24972 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-08-03 17:32:00.017  INFO 24972 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-03 17:32:00.371  INFO 24972 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2019-08-03 17:32:00.661  INFO 24972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-03 17:32:00.989  INFO 24972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-03 17:32:01.328  INFO 24972 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-03 17:32:01.536  INFO 24972 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 9686 (http) with context path ''
+2019-08-03 17:32:01.544  INFO 24972 --- [main] com.alibaba.nacos.client.naming          : [BEAT] adding beat: {"cluster":"DEFAULT","ip":"192.168.6.80","metadata":{"preserved.register.source":"SPRING_CLOUD"},"period":5000,"port":9686,"scheduled":false,"serviceName":"DEFAULT_GROUP@@atinbo-sleuth-zipkin","stopped":false,"weight":1.0} to beat map.
+2019-08-03 17:32:01.611  INFO 24972 --- [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@atinbo-sleuth-zipkin with instance: {"clusterName":"DEFAULT","enabled":true,"ephemeral":true,"healthy":true,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ip":"192.168.6.80","ipDeleteTimeout":30000,"metadata":{"preserved.register.source":"SPRING_CLOUD"},"port":9686,"weight":1.0}
+2019-08-03 17:32:01.625  INFO 24972 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, atinbo-sleuth-zipkin 192.168.6.80:9686 register finished
+2019-08-03 17:32:01.629  INFO 24972 --- [main] c.a.s.zipkin.AtinboZipkinApplication     : Started AtinboZipkinApplication in 14.902 seconds (JVM running for 20.838)
+2019-08-03 17:32:01.633  INFO 24972 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin.yml+DEFAULT_GROUP
+2019-08-03 17:32:01.634  INFO 24972 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:32:01.634  INFO 24972 --- [main] c.a.n.client.config.impl.ClientWorker    : [fixed-192.168.6.106_8848] [subscribe] atinbo-sleuth-zipkin-local.yml+DEFAULT_GROUP
+2019-08-03 17:32:01.634  INFO 24972 --- [main] c.a.nacos.client.config.impl.CacheData   : [fixed-192.168.6.106_8848] [add-listener] ok, tenant=, dataId=atinbo-sleuth-zipkin-local.yml, group=DEFAULT_GROUP, cnt=1
+2019-08-03 17:32:01.967  INFO 24972 --- [RMI TCP Connection(2)-127.0.0.1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-03 17:32:01.968  INFO 24972 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-03 17:32:01.978  INFO 24972 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms

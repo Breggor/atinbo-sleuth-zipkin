@@ -7,7 +7,6 @@ import zipkin2.server.internal.EnableZipkinServer;
 @EnableZipkinServer
 @SpringCloudApplication
 public class AtinboZipkinApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(AtinboZipkinApplication.class, args);
     }
