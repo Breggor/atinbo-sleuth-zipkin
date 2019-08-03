@@ -1,0 +1,27 @@
+info:
+  groupId: @project.groupId@
+  artifactId: @project.artifactId@
+  version: @project.version@
+
+server:
+  port: 9686
+
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: @project.name@
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.6.106:8848
+        file-extension: yml
+      discovery:
+        enabled: true
+        server-addr: 192.168.6.106:8848
+
+logging:
+  path: ./logs
+  level:
+    root: INFO
+    com.atinbo: INFO
